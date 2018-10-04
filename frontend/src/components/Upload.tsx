@@ -6,6 +6,8 @@ import "react-sweet-progress/lib/style.css"
 import { Status } from "../enums"
 import firebaseApp from "../firebaseApp"
 import ReactGA from "react-ga"
+import "@material/react-button/dist/button.css"
+import Button from "@material/react-button/dist"
 
 interface IState {
   file?: File
@@ -161,9 +163,9 @@ class Upload extends React.Component<any, IState> {
               <option value="nb-NO">Norsk</option>
               <option value="en-US">Engelsk</option>
             </select>
-            <button className="nrk-button" disabled={this.state.file == null} type="submit">
+            <Button raised className="button-alternate" disabled={this.state.file == null} type="submit">
               Last opp
-            </button>
+            </Button>
           </form>
         </div>
       )
