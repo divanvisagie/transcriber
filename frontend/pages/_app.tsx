@@ -40,15 +40,10 @@ export default class MyApp extends App {
             </li>
 
             <li>
-              <a href="#profile">
-                <svg width="26" height="26" aria-hidden="true">
-                  <use xlinkHref="#icon-user-40px" />
-                </svg>
-                Stefan Ogden
-              </a>
-            </li>
-            <li>
-              <a href="#logout">Logg ut</a>
+              <svg width="26" height="26" aria-hidden="true">
+                <use xlinkHref="#icon-user-40px" />
+              </svg>
+              Stefan Ogden
             </li>
           </ul>
         </nav>
