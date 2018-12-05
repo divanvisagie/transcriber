@@ -13,7 +13,11 @@ const config = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
 }
 
-firebase.initializeApp(config)
+if (!firebase.apps.length) {
+  firebase.initializeApp(config)
+} else {
+  firebase.app()
+}
 
 const auth = firebase.auth()
 const database = firebase.firestore()

@@ -1,8 +1,18 @@
 import App, { Container } from "next/app"
 import * as React from "react"
+import ReactGA from "react-ga"
+import { auth } from "../src/firebaseApp"
+
+interface IState {
+  user?: firebase.User
+}
 
 export default class MyApp extends App {
   public static async getInitialProps({ Component, router, ctx }) {
+    console.log(Component)
+    console.log(router)
+    console.log(ctx)
+
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -10,6 +20,21 @@ export default class MyApp extends App {
     }
 
     return { pageProps }
+  }
+  public async componentDidMount() {
+    console.log("componentDidMount")
+
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        console.log("Logged in")
+
+        this.setState({ user })
+        // Set Google Analytics ID
+        ReactGA.set({ userId: user.uid })
+      } else {
+        // history.push("login")
+      }
+    })
   }
 
   public render() {
@@ -43,7 +68,7 @@ export default class MyApp extends App {
               <svg width="26" height="26" aria-hidden="true">
                 <use xlinkHref="#icon-user-40px" />
               </svg>
-              Stefan Ogden
+              {this.state.user ? this.state.user.displayName : <a href="/login">Logg inn</a>}
             </li>
           </ul>
         </nav>

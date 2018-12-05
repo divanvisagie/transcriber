@@ -19,8 +19,9 @@ class Transcripts2 extends Component<IProps, IState> {
 
   public componentDidMount() {
     // Check if have the user in props
+    this.fetchTranscripts("HeEfcMXcGCdBnzoJgDA0ho3H3hy1")
     if (this.props.userId !== undefined) {
-      this.fetchTranscripts(this.props.user.uid)
+      // this.fetchTranscripts(this.props.userId)
     }
   }
 
@@ -56,6 +57,7 @@ class Transcripts2 extends Component<IProps, IState> {
     )
   }
   private fetchTranscripts(uid: string) {
+    console.log("HEI1")
     database
       .collection("/transcripts")
       .where("userId", "==", uid)
@@ -76,6 +78,8 @@ class Transcripts2 extends Component<IProps, IState> {
             transcriptIds.push(doc.id)
           }
         })
+
+        console.log("HEI")
 
         this.setState({
           transcriptIds,
