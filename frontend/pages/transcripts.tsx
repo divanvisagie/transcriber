@@ -110,8 +110,8 @@ const Transcripts = () => (
       <table className="org-table">
         <thead>
           <tr>
-            <th>Klippnavn</th>
-            <th>Data</th>
+            <th>Navn</th>
+            <th>Dato</th>
             <th>Varighet</th>
           </tr>
         </thead>
