@@ -15,14 +15,12 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <style>{`body { margin: 0; background-color:red; } /* custom! */`}</style>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <link rel="stylesheet" href="https://static.nrk.no/core-css/major/1/core-css.min.css" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" />
           <link rel="stylesheet" href="https://static.nrk.no/origo-css/latest/origo-css.min.css" />
-          <link rel="stylesheet" href="transcriber.css" />
           <script async={true} defer={true} src="https://static.nrk.no/origo-css/latest/origo-css.min.js" />
           <script async={true} defer={true} src="https://static.nrk.no/core-icons/major/4/core-icons.min.js" />
         </Head>

@@ -7,12 +7,8 @@ interface IState {
   user?: firebase.User
 }
 
-export default class MyApp extends App {
+export default class MyApp extends App<IState> {
   public static async getInitialProps({ Component, router, ctx }) {
-    console.log(Component)
-    console.log(router)
-    console.log(ctx)
-
     let pageProps = {}
 
     if (Component.getInitialProps) {
