@@ -37,7 +37,20 @@ main#transcript {
 
 /* Navigation */
 
+.logo a:visited,
+.logo a:active,
+.logo a:link,
+.logo a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 header div.user a {
+  color: white;
+  text-decoration: none;
+}
+
+.login a {
   color: white;
   text-decoration: none;
 }
